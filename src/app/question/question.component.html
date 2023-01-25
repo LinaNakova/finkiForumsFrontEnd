@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>{{course?.name}}</h1>
+  <div class="header">
+    <h2>Прашања</h2>
+    <div class="buttons">
+      <button *ngIf="this.activeUser?.userType=='STUDENT'">+ Прашање</button>
+      <button>Материјали</button>
+    </div>
+  </div>
+
+  <div class="card" *ngFor="let q of questions" routerLink="/question-details/{{q?.id}}">
+    <h4>{{q?.title}}</h4>
+    <p>{{q?.content}}</p>
+  </div>
+
+</div>
+

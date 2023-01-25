@@ -1,0 +1,15 @@
+<div class="parent-container">
+  <h1>Мои курсеви</h1>
+  <div class="container" *ngIf="this.activeUser?.userType=='STUDENT'">
+    <a class="card" *ngFor="let s of studentCourses"
+       routerLink="/details/{{s?.course?.id}}">
+      Курс: {{s?.course?.name}}
+    </a>
+  </div>
+  <div class="container" *ngIf="this.activeUser?.userType=='PROFESSOR'">
+    <a class="card" *ngFor="let s of professorCourses"
+       routerLink="/details/{{s?.course?.id}}" >
+      Курс: {{s?.course?.name}}
+    </a>
+  </div>
+</div>

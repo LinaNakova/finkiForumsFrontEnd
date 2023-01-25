@@ -1,0 +1,38 @@
+.title{
+  color: lightskyblue;
+}
+button{
+  background-color: lightskyblue;
+  border: none;
+  padding: 5px;
+  height: 50px;
+}
+small{
+  color: gray;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+.arrows{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.answer-card{
+  display: flex;
+  align-content: center;
+}
+.answer-card p {
+  background-color: lightskyblue;
+  padding: 10px;
+  width: 100%;
+}
