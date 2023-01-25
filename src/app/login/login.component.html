@@ -1,0 +1,40 @@
+<div class="parent-container">
+  <div class="header">
+    <div class="headings">
+      <h1>
+        Добредојдовте на <i>FinkiForums</i>
+      </h1>
+      <h1>
+        Централизирано место за прашања околу ФИНКИ
+      </h1>
+    </div>
+    <img src="https://servisi.ukim.mk/images/finki-t.png">
+  </div>
+
+  <button (click)="showLogin()">Најави се</button>
+
+  <button (click)="showRegister()">Регистрирај се</button>
+
+  <div class="container" *ngIf="login">
+    <form class="example-form">
+      <div class="login-form">
+        <label>Корисничко име</label>
+        <input placeholder="Enter your username" name="username"
+               [(ngModel)]="username">
+        <label>Лозинка</label>
+        <input placeholder="Enter your password"
+               value=""
+               name="password"
+               type="password"
+               [(ngModel)]="password">
+        <button (click)="submit()"
+                [disabled]="username==null && password==null" type="button">Submit
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="container" *ngIf="register">
+    Da se impl register
+  </div>
+
+</div>

@@ -3,14 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StudentCourseComponent } from './student-course/student-course.component';
+import {HttpClientModule} from "@angular/common/http";
+import { SubjectComponent } from './subject/subject.component';
+import { QuestionComponent } from './question/question.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import {RouterModule} from "@angular/router";
+import { QuestionDetailsComponent } from './question-details/question-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StudentCourseComponent,
+    SubjectComponent,
+    QuestionComponent,
+    LoginComponent,
+    QuestionDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
