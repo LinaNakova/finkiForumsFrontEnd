@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {CourseInterface} from "./courseInterface";
+import {StudentCourseInterface} from "./StudentCourseInterface";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,9 @@ export class CourseService {
   constructor(private http: HttpClient) {
   }
 
+  getAllCourses(): Observable<CourseInterface[]> {
+    return this.http.get<CourseInterface[]>(`${this.url}/all`)
+  }
   findCourseById(id :number) : Observable<CourseInterface>{
       return this.http.get<CourseInterface>(`${this.url}/course/${id}`);
   }

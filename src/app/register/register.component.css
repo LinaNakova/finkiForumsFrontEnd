@@ -20,7 +20,7 @@ button{
   margin: 5px;
   cursor: pointer;
 }
-.login-form{
+.register-form{
   display: flex;
   flex-direction: column;
 }
@@ -29,3 +29,10 @@ input{
   height: 30px;
   margin: none;
 }
+.radio{
+  width: auto !important;
+  height: 30px;
+  margin: none;
+}
+
+

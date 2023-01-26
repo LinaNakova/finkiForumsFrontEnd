@@ -27,8 +27,8 @@ export class LoginComponent {
     this.login = this.login == null ? true : !this.login;
   }
 
-  showRegister(){
-    this.register = this.register == null ? true : !this.register;
+  goToRegister(){
+    this.router.navigate(['/register']);
   }
 
 }
