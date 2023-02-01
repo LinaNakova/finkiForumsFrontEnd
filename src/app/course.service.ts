@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {CourseInterface} from "./courseInterface";
-import {StudentCourseInterface} from "./StudentCourseInterface";
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +16,9 @@ export class CourseService {
   getAllCourses(): Observable<CourseInterface[]> {
     return this.http.get<CourseInterface[]>(`${this.url}/all`)
   }
+  findCoursesBySubjectId(id : number) : Observable<CourseInterface[]> {
+  return this.http.get<CourseInterface[]>(`${this.url}/by-subject/${id}`)
+}
   findCourseById(id :number) : Observable<CourseInterface>{
       return this.http.get<CourseInterface>(`${this.url}/course/${id}`);
   }

@@ -1,3 +1,14 @@
-<div class="card">
-  <p *ngFor="let s of subjects">{{s?.name}}</p>
+<div class="parent-container" *ngIf="this.activeUser!!.userType == 'PROFESSOR'">
+  <h1>Сите Предмети</h1>
+  <form class="example-form" class="list">
+    <div *ngFor="let s of subjects">
+      <input type="radio" name="radio-btns" (change)="onChange({event : $event, id : {id : s.id}})">
+      <label>
+        <p class="card">
+          {{s?.name}}
+        </p>
+      </label>
+    </div>
+  </form>
 </div>
+<app-all-courses [subjectId]="subjectId"></app-all-courses>

@@ -3,7 +3,6 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {StudentCourseInterface} from "./StudentCourseInterface";
 import {ProfessorCourseInterface} from "./ProfessorCourseInterface";
-import {ActiveUserInterface} from "./ActiveUserInterface";
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +14,13 @@ export class AddStudentCoursesService {
 
   constructor(private http: HttpClient) { }
 
-  addCourseToStudent(username: string, selectedCourse: string) {
+  addCourseToStudent(username: string, selectedCourse: number) :Observable<StudentCourseInterface> {
     const params = new HttpParams().append('username', username).append("selectedCourse",selectedCourse);
-    this.http.get<StudentCourseInterface>(this.url, {params: params}).subscribe(resp=>{
-      console.log("Response add",resp)
-    })
+    return this.http.get<StudentCourseInterface>(this.url, {params: params})
   }
 
-  addCourseToProfessor(username: string, selectedCourse: string) :  Observable<ProfessorCourseInterface> {
-    const params = new HttpParams().append('username', username).append("selectedCourses",selectedCourse);
+  addCourseToProfessor(username: string, selectedCourse: number) :  Observable<ProfessorCourseInterface> {
+    const params = new HttpParams().append('username', username).append("selectedCourse",selectedCourse);
     return this.http.get<ProfessorCourseInterface>(this.urlProf, {params: params})
   }
 }

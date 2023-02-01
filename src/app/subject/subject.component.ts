@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import {StudentCourseInterface} from "../StudentCourseInterface";
-import {StudentCourseService} from "../student-course.service";
+import {Component, ViewChild} from '@angular/core';
 import {SubjectInterface} from "../subjectInterface";
 import {SubjectService} from "../subject.service";
+import {ActiveUserInterface} from "../ActiveUserInterface";
+import {LoginService} from "../login.service";
+import {AllCoursesComponent} from "../all-courses/all-courses.component";
 
 @Component({
   selector: 'app-subject',
@@ -11,14 +12,30 @@ import {SubjectService} from "../subject.service";
 })
 export class SubjectComponent {
 
-  subjects : SubjectInterface[] = []
+  subjects : SubjectInterface[] = [];
+  subjectId : number | undefined;
+  activeUser: ActiveUserInterface | undefined;
+  @ViewChild(AllCoursesComponent) child! : AllCoursesComponent;
 
-  constructor(private service: SubjectService) {
+  constructor(private service: SubjectService,
+              private loginService: LoginService) {
   }
 
   ngOnInit(): void {
+    this.activeUser = this.loginService.activeUser!!;
     this.service.getAllSubjects()
       .subscribe(subjects => this.subjects = subjects);
+  }
+
+  onChange({event, id}: { event: any, id: any }){
+    if(event.target.checked){
+      // @ts-ignore
+      this.subjectId = id
+      this.child.loadCourses(id.id);
+    } else {
+      // @ts-ignore
+      this.subjectId = null;
+    }
   }
 
 }
