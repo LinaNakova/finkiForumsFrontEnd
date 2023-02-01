@@ -13,7 +13,7 @@
 
   <button (click)="showLogin()">Најави се</button>
 
-  <button (click)="showRegister()">Регистрирај се</button>
+  <button (click)="goToRegister()">Регистрирај се</button>
 
   <div class="container" *ngIf="login">
     <form class="example-form">
@@ -32,9 +32,6 @@
         </button>
       </div>
     </form>
-  </div>
-  <div class="container" *ngIf="register">
-    Da se impl register
   </div>
 
 </div>

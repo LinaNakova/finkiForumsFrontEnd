@@ -1,0 +1,18 @@
+<div class="parent-container">
+  <h1>Сите курсеви</h1>
+  <form class="example-form">
+    <div class="list">
+      <div *ngFor="let c of courses">
+        <input type="checkbox" name="{{c.name}}"
+               (change)="onChange({event : $event, id : {id : c.id}})"
+               [checked]="checked({id : {id : c.id}})">
+        <label>
+          <p class="card">
+            Курс: {{c.name}}
+          </p>
+        </label>
+      </div>
+    </div>
+    <button (click)="submit()" type="button"><b>Submit</b></button>
+  </form>
+</div>

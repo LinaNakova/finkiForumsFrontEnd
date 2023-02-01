@@ -27,6 +27,7 @@ button{
   float: right;
   cursor: pointer;
 }
+
 .list{
   display: flex;
 }
