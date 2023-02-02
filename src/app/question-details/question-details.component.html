@@ -1,7 +1,7 @@
 <div class="container">
   <div class="header">
   <h2 class="title">{{question?.title}}</h2>
-    <button>Одговори на прашањето</button>
+    <button routerLink="/add-answer/{{question?.id}}">Одговори на прашањето</button>
   </div>
   <hr>
   <small>Поставено на:{{question?.dateAsked?.slice(0,10)}} од:{{question?.student?.name}} {{question?.student?.lastName}}</small>

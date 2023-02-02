@@ -13,6 +13,8 @@ import {RouterModule} from "@angular/router";
 import { QuestionDetailsComponent } from './question-details/question-details.component';
 import { RegisterComponent } from './register/register.component';
 import { AllCoursesComponent } from './all-courses/all-courses.component';
+import { AddQuestionComponent } from './add-question/add-question.component';
+import { AddAnswerComponent } from './add-answer/add-answer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AllCoursesComponent } from './all-courses/all-courses.component';
     LoginComponent,
     QuestionDetailsComponent,
     RegisterComponent,
-    AllCoursesComponent
+    AllCoursesComponent,
+    AddQuestionComponent,
+    AddAnswerComponent
   ],
   imports: [
     BrowserModule,

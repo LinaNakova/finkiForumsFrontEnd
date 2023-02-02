@@ -1,0 +1,21 @@
+<div class="parent-container">
+  <div class="container">
+    <form class="example-form">
+      <div class="add-question">
+        <label>Наслов</label>
+        <input name="title"
+               [(ngModel)]="title">
+        <label>Содржина</label>
+        <textarea name="content" [(ngModel)]="content"></textarea>
+        <label>Категории</label>
+        <!--TODO:Add question category-->
+        <div class="btn-div">
+          <button (click)="submit()"
+                  [disabled]="title==null && content==null" type="button">Прашај
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

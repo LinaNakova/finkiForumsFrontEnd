@@ -1,0 +1,16 @@
+<div class="parent-container">
+  <div class="container">
+    <form class="example-form">
+      <div class="add-answer">
+        <label>Содржина</label>
+        <textarea name="content" [(ngModel)]="content"></textarea>
+        <div class="btn-div">
+          <button (click)="submit()"
+                  [disabled]="content==null" type="button">Одговори на прашањето
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
