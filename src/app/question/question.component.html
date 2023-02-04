@@ -3,7 +3,7 @@
   <div class="header">
     <h2>Прашања</h2>
     <div class="buttons">
-      <button *ngIf="this.activeUser?.userType=='STUDENT'">+ Прашање</button>
+      <button *ngIf="this.activeUser?.userType=='STUDENT'" routerLink="/add-question/{{course?.id}}">+ Прашање</button>
       <button>Материјали</button>
     </div>
   </div>
