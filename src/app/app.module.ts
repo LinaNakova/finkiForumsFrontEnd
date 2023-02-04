@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { AllCoursesComponent } from './all-courses/all-courses.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { AddAnswerComponent } from './add-answer/add-answer.component';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AddAnswerComponent } from './add-answer/add-answer.component';
     RegisterComponent,
     AllCoursesComponent,
     AddQuestionComponent,
-    AddAnswerComponent
+    AddAnswerComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
