@@ -22,7 +22,6 @@ export class StudentCourseComponent implements OnInit {
 
   ngOnInit(): void {
     this.activeUser = this.loginService.activeUser!!;
-    console.log("username", this.activeUser.username)
     debugger
     if (this.loginService.activeUser!!.userType == 'STUDENT')
       this.service.getAllCoursesForActiveUserStudent(this.activeUser.username)
