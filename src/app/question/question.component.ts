@@ -4,7 +4,6 @@ import {QuestionService} from "../question.service";
 import {ActivatedRoute} from "@angular/router";
 import {CourseService} from "../course.service";
 import {CourseInterface} from "../courseInterface";
-import {AnswerInterface} from "../AnswerInterface";
 import {LoginService} from "../login.service";
 import {ActiveUserInterface} from "../ActiveUserInterface";
 
@@ -27,7 +26,6 @@ export class QuestionComponent {
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.activeUser = this.loginService.activeUser;
-    console.log("id", id);
     this.findCourseById(id);
     this.getAllQuestionsForCourse(id);
   }

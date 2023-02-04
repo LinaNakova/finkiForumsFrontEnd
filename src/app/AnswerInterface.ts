@@ -3,7 +3,7 @@ import {ProfessorInterface} from "./ProfessorInterface";
 import {StudentInterface} from "./StudentInterface";
 
 export interface AnswerInterface{
-  id?:number,
+  id:number,
   content?: string,
   valid?: string,
   dateAnswered?: string,
