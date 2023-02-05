@@ -16,6 +16,7 @@ import { AllCoursesComponent } from './all-courses/all-courses.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { AddAnswerComponent } from './add-answer/add-answer.component';
 import { CategoryComponent } from './category/category.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CategoryComponent } from './category/category.component';
     AllCoursesComponent,
     AddQuestionComponent,
     AddAnswerComponent,
-    CategoryComponent
+    CategoryComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,99 @@
+<h1>Query 1</h1>
+<table>
+  <thead>
+  <tr>
+    <!-- Add table headers -->
+    <th>Наслов</th>
+    <th>Содржина</th>
+    <th>Датум</th>
+    <th>Број на одговори</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of query1">
+    <!-- Add table rows -->
+    <td>{{row?.pra_naslov}}</td>
+    <td>{{row?.pra_sodrzina}}</td>
+    <td>{{row?.pra_datum}}</td>
+    <td>{{row?.maximum}}</td>
+  </tr>
+  </tbody>
+</table>
+<h1>Query 2</h1>
+<table>
+  <thead>
+  <tr>
+    <!-- Add table headers -->
+    <th>Наслов</th>
+    <th>Содржина</th>
+    <th>Датум</th>
+    <th>Број на реакции</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of query2">
+    <!-- Add table rows -->
+    <td>{{row?.pra_naslov}}</td>
+    <td>{{row?.pra_sodrzina}}</td>
+    <td>{{row?.pra_datum}}</td>
+    <td>{{row?.br_reakcii_total}}</td>
+  </tr>
+  </tbody>
+</table>
+<h1>Query 3</h1>
+<table>
+  <thead>
+  <tr>
+    <!-- Add table headers -->
+    <th>Корисничко име</th>
+    <th>Вкупен број на активности</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of query3">
+    <!-- Add table rows -->
+    <td>{{row?.korisnicko_ime}}</td>
+    <td>{{row?.vk}}</td>
+  </tr>
+  </tbody>
+</table>
+<h1>Query 4</h1>
+<table>
+  <thead>
+  <tr>
+    <!-- Add table headers -->
+    <th>Име на предмет</th>
+    <th>Име на курс</th>
+    <th>Број на исти категории</th>
+    <th>Број на исти категории</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of query4">
+    <!-- Add table rows -->
+    <td>{{row?.pr_ime}}</td>
+    <td>{{row?.ku_ime}}</td>
+    <td>{{row?.br_isti_kategorii}}</td>
+    <td>{{row?.br_prasanja}}</td>
+  </tr>
+  </tbody>
+</table>
+<h1>Query 5</h1>
+<table>
+  <thead>
+  <tr>
+    <!-- Add table headers -->
+    <th>Име на професор</th>
+    <th>Презиме на професор</th>
+    <th>Најбрзо време на одговор</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of query5">
+    <!-- Add table rows -->
+    <td>{{row?.p_ime}}</td>
+    <td>{{row?.p_prezime}}</td>
+    <td>{{formatInterval(row.najbrzo_vreme.value)}}</td>
+  </tr>
+  </tbody>
+</table>
