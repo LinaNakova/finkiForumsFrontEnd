@@ -11,7 +11,6 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import {RouterModule} from "@angular/router";
 import { QuestionDetailsComponent } from './question-details/question-details.component';
-import { RegisterComponent } from './register/register.component';
 import { AllCoursesComponent } from './all-courses/all-courses.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { AddAnswerComponent } from './add-answer/add-answer.component';
@@ -26,7 +25,6 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     QuestionComponent,
     LoginComponent,
     QuestionDetailsComponent,
-    RegisterComponent,
     AllCoursesComponent,
     AddQuestionComponent,
     AddAnswerComponent,

@@ -13,7 +13,7 @@
 
   <button (click)="showLogin()">Најави се</button>
 
-  <button (click)="goToRegister()">Регистрирај се</button>
+  <button (click)="showRegister()">Регистрирај се</button>
 
   <div class="container" *ngIf="login">
     <form class="example-form">
@@ -27,11 +27,46 @@
                name="password"
                type="password"
                [(ngModel)]="password">
-        <button (click)="submit()"
+        <button (click)="submitLogin()"
                 [disabled]="username==null && password==null" type="button">Submit
         </button>
       </div>
     </form>
   </div>
-
+  <div class="container" *ngIf="register">
+    <form class="example-form">
+      <div class="register-form">
+        <label>Име</label>
+        <input placeholder="Enter your name" name="name"
+               [(ngModel)]="name">
+        <label>Презиме</label>
+        <input placeholder="Enter your last name" name="lastName"
+               [(ngModel)]="lastName">
+        <label>Електронска пошта</label>
+        <input placeholder="Enter your email" name="email"
+               [(ngModel)]="email">
+        <label>Корисничко име</label>
+        <input placeholder="Enter your username" name="username"
+               [(ngModel)]="username">
+        <label>Лозинка</label>
+        <input placeholder="Enter your password"
+               value=""
+               name="password"
+               type="password"
+               [(ngModel)]="password">
+        <div class="form-check">
+          <input class="radio" type="radio" name="userType" [(ngModel)]="userType" value="PROFESSOR">
+          <label class="radio-label">Професор</label>
+          <input class="radio" type="radio" name="userType" [(ngModel)]="userType" value="STUDENT">
+          <label class="radio-label">Студент</label>
+        </div>
+        <label>Индекс</label>
+        <input placeholder="Enter your index" name="index"
+               [(ngModel)]="index">
+        <button (click)="submitRegister()"
+                [disabled]="name==null || lastName==null || email==null || username==null || password==null || userType==null" type="button">Регистрирај се
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

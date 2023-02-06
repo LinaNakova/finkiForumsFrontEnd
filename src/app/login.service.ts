@@ -26,7 +26,10 @@ export class LoginService {
         console.log("Response login", resp);
         this.activeUser = resp;
         console.log("active user", this.activeUser)
-        this.router.navigate(['/courses']);
+        if (this.activeUser.userType==="ADMIN")
+          this.router.navigate(['/admin-panel'])
+        else
+          this.router.navigate(['/courses']);
       })
   }
 }

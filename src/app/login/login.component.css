@@ -24,8 +24,20 @@ button{
   display: flex;
   flex-direction: column;
 }
+
 input{
   width: 30%;
+  height: 30px;
+  margin: none;
+}
+
+.register-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.radio{
+  width: auto !important;
   height: 30px;
   margin: none;
 }
