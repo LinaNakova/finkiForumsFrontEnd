@@ -8,6 +8,8 @@ import {RegisterComponent} from "./register/register.component";
 import {SubjectComponent} from "./subject/subject.component";
 import {AddQuestionComponent} from "./add-question/add-question.component";
 import {AddAnswerComponent} from "./add-answer/add-answer.component";
+import {MaterialsComponent} from "./materials/materials.component";
+import {AddMaterialComponent} from "./add-material/add-material.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -18,7 +20,9 @@ const routes: Routes = [
   { path: 'add-question/:id', component: AddQuestionComponent},
   { path: 'add-answer/:id', component:AddAnswerComponent},
   { path: 'details/:id', component: QuestionComponent },
-  { path: 'question-details/:id', component: QuestionDetailsComponent}
+  { path: 'question-details/:id', component: QuestionDetailsComponent},
+  { path: 'materials', component: MaterialsComponent},
+  { path: 'add-materials', component: AddMaterialComponent}
 ];
 
 @NgModule({
