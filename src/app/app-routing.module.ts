@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'add-answer/:id', component:AddAnswerComponent},
   { path: 'details/:id', component: QuestionComponent },
   { path: 'question-details/:id', component: QuestionDetailsComponent},
-  { path: 'materials', component: MaterialsComponent},
+  { path: 'materials/:id', component: MaterialsComponent},
   { path: 'add-materials', component: AddMaterialComponent}
 ];
 

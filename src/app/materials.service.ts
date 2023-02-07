@@ -11,8 +11,8 @@ export class MaterialsService {
   constructor(private http: HttpClient) {
   }
 
-  upload(formData: FormData): Observable<HttpEvent<string[]>> {
-    return this.http.post<string[]>(`${this.path}/upload`, formData, {
+  upload(formData: FormData, username: string, courseId: number): Observable<HttpEvent<string[]>> {
+    return this.http.post<string[]>(`${this.path}/upload/${courseId}`, formData, {
       reportProgress: true,
       observe: 'events'
     });
@@ -24,5 +24,9 @@ export class MaterialsService {
       observe: 'events',
       responseType: 'blob'
     });
+  }
+
+  findAllMaterialsForCourse(id : number){
+    return this.http.get(`${this.path}/all/${id}`)
   }
 }

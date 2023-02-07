@@ -23,13 +23,17 @@ export class StudentCourseComponent implements OnInit {
   ngOnInit(): void {
     this.activeUser = this.loginService.activeUser!!;
     console.log("username", this.activeUser.username)
-    debugger
     if (this.loginService.activeUser!!.userType == 'STUDENT')
       this.service.getAllCoursesForActiveUserStudent(this.activeUser.username)
         .subscribe(studentCourses => this.studentCourses = studentCourses);
     if (this.activeUser.userType == 'PROFESSOR')
       this.service.getAllCoursesForActiveUserProfessor(this.activeUser.username)
         .subscribe(professorCourses => this.professorCourses = professorCourses);
+  }
+
+  saveCourseAsCurrent(id: number):void{
+    console.log("course id", id)
+    this.loginService.setCurrentCourse(id);
   }
 
 

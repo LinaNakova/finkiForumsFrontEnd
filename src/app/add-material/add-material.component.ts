@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActiveUserInterface} from "../ActiveUserInterface";
 import {LoginService} from "../login.service";
 import {MaterialsService} from "../materials.service";
@@ -14,6 +14,7 @@ export class AddMaterialComponent implements OnInit{
   activeUser: ActiveUserInterface | undefined;
   filenames: string[] = [];
   fileStatus = {status: '', requestType: '', percent: 0};
+  courseId: number;
 
   constructor(private loginService: LoginService,
               private materialService: MaterialsService) {
@@ -21,6 +22,7 @@ export class AddMaterialComponent implements OnInit{
 
   ngOnInit(): void {
     this.activeUser = this.loginService.activeUser;
+    this.courseId = this.loginService.currentCourse;
   }
 
   // define a function to upload files
@@ -31,10 +33,10 @@ export class AddMaterialComponent implements OnInit{
     for (const file of files) {
       formData.append('files', file, file.name);
     }
-    this.materialService.upload(formData).subscribe(
+    this.materialService.upload(formData, this.activeUser.username, this.loginService.currentCourse).subscribe(
       event => {
         console.log(event);
-        this.resportProgress(event);
+        this.reportProgress(event);
       },
       (error: HttpErrorResponse) => {
         console.log(error);
@@ -47,7 +49,7 @@ export class AddMaterialComponent implements OnInit{
     this.materialService.download(filename).subscribe(
       event => {
         console.log(event);
-        this.resportProgress(event);
+        this.reportProgress(event);
       },
       (error: HttpErrorResponse) => {
         console.log(error);
@@ -55,7 +57,7 @@ export class AddMaterialComponent implements OnInit{
     );
   }
 
-  private resportProgress(httpEvent: HttpEvent<string[] | Blob>): void {
+  private reportProgress(httpEvent: HttpEvent<string[] | Blob>): void {
     switch (httpEvent.type) {
       case HttpEventType.UploadProgress:
         this.updateStatus(httpEvent.loaded, httpEvent.total!, 'Uploading... ');
