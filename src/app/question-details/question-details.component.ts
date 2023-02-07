@@ -3,6 +3,8 @@ import {QuestionService} from "../question.service";
 import {QuestionInterface} from "../QuestionInterface";
 import {ActivatedRoute} from "@angular/router";
 import {AnswerInterface} from "../AnswerInterface";
+import {LoginService} from "../login.service";
+import {ActiveUserInterface} from "../ActiveUserInterface";
 
 @Component({
   selector: 'app-question-details',
@@ -12,21 +14,53 @@ import {AnswerInterface} from "../AnswerInterface";
 export class QuestionDetailsComponent implements OnInit{
   question: QuestionInterface | undefined
   answers: AnswerInterface[] =[]
+  answersLikes = new Map<number, number>()
+  activeUser: ActiveUserInterface | undefined;
 
   constructor(private questionService: QuestionService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private loginService: LoginService) {
   }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.findQuestionById(id);
+    this.activeUser = this.loginService.activeUser;
   }
 
   findQuestionById(id : number){
     this.questionService.findQuestionById(id)
       .subscribe(resp => {
         this.question = resp;
-        this.questionService.findAnswersForQuestionWithId(id).subscribe(resp=>{this.answers = resp})
+        this.questionService.findAnswersForQuestionWithId(id)
+          .subscribe(resp=>{
+            this.answers = resp; this.findLikesForAnswers()
+          })
+      });
+  }
+
+  findLikesForAnswers(){
+    this.answers.forEach( answer =>
+      this.questionService.findLikesForAnswer(answer.id)
+        .subscribe(number => this.answersLikes.set(answer.id, +number))
+    )
+  }
+
+  likeAnswer(id: number){
+    // @ts-ignore
+    this.questionService.likeAnswer(id, this.activeUser!!.username , this.activeUser!!.userType)
+      .subscribe(number => {
+        this.answersLikes.delete(id);
+        this.answersLikes.set(id, + number);
+      })
+  }
+
+  unlikeAnswer(id: number){
+    // @ts-ignore
+    this.questionService.unlikeAnswer(id, this.activeUser!!.username , this.activeUser!!.userType)
+      .subscribe(number => {
+        this.answersLikes.delete(id);
+        this.answersLikes.set(id, + number);
       })
   }
 
