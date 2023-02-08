@@ -1,7 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {QuestionInterface} from "./QuestionInterface";
 import {ActiveUserInterface} from "./ActiveUserInterface";
 import {Router} from "@angular/router";
 
@@ -12,6 +10,7 @@ export class LoginService {
 
   url = "http://localhost:8080/api/login"
   activeUser: ActiveUserInterface | undefined;
+  currentCourse: number | undefined;
 
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -31,5 +30,10 @@ export class LoginService {
         else
           this.router.navigate(['/courses']);
       })
+  }
+
+  setCurrentCourse(id: number) : void{
+    this.currentCourse = id;
+    console.log("Current course is ", id);
   }
 }

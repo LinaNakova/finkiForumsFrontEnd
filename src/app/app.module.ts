@@ -16,6 +16,9 @@ import { AddQuestionComponent } from './add-question/add-question.component';
 import { AddAnswerComponent } from './add-answer/add-answer.component';
 import { CategoryComponent } from './category/category.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { MaterialsComponent } from './materials/materials.component';
+import { AddMaterialComponent } from './add-material/add-material.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     AddQuestionComponent,
     AddAnswerComponent,
     CategoryComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    MaterialsComponent,
+    AddMaterialComponent
   ],
   imports: [
     BrowserModule,

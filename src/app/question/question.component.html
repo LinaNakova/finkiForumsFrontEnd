@@ -4,7 +4,7 @@
     <h2>Прашања</h2>
     <div class="buttons">
       <button *ngIf="this.activeUser?.userType=='STUDENT'" routerLink="/add-question/{{course?.id}}">+ Прашање</button>
-      <button>Материјали</button>
+      <button routerLink="/materials/{{course?.id}}">Материјали</button>
     </div>
   </div>
 
