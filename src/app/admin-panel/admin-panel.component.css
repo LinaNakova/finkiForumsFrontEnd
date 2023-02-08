@@ -1,0 +1,25 @@
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+th, td {
+  border: 1px solid white;
+  padding: 8px;
+  text-align: left;
+  background-color: #ddd;
+}
+
+th {
+  background-color: lightskyblue;
+}
+.table-container {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.table-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
