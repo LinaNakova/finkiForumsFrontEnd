@@ -1,15 +1,17 @@
-.card{
+.card {
   display: inline-block;
-  background-color: lightskyblue;
+  background-color: rgba(139, 208, 255, 0.8);
   width: 100px;
   height: 100px;
   margin: 10px;
   padding: 5px;
 }
-.container{
+
+.container {
   display: flex;
 }
-.parent-container{
+
+.parent-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,8 +19,8 @@
   margin-right: 200px;
 }
 
-button{
-  background-color: lightskyblue;
+button {
+  background-color: rgba(139, 208, 255, 0.8);
   border: none;
   padding: 5px;
   height: 50px;
@@ -27,6 +29,7 @@ button{
   float: right;
   cursor: pointer;
 }
-.list{
+
+.list {
   display: flex;
 }

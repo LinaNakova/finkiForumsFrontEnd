@@ -4,6 +4,7 @@ import {StudentCourseInterface} from "../StudentCourseInterface";
 import {LoginService} from "../login.service";
 import {ProfessorCourseInterface} from "../ProfessorCourseInterface";
 import {ActiveUserInterface} from "../ActiveUserInterface";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-student-course',
@@ -17,12 +18,16 @@ export class StudentCourseComponent implements OnInit {
   activeUser: ActiveUserInterface | undefined;
 
   constructor(private service: StudentCourseService,
-              private loginService: LoginService) {
+              private loginService: LoginService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
     this.activeUser = this.loginService.activeUser!!;
-    console.log("username", this.activeUser.username)
+    if (!this.activeUser) {
+      this.router.navigate(['/'])
+    }
+    // console.log("username", this.activeUser.username)
     if (this.loginService.activeUser!!.userType == 'STUDENT')
       this.service.getAllCoursesForActiveUserStudent(this.activeUser.username)
         .subscribe(studentCourses => this.studentCourses = studentCourses);
@@ -31,7 +36,7 @@ export class StudentCourseComponent implements OnInit {
         .subscribe(professorCourses => this.professorCourses = professorCourses);
   }
 
-  saveCourseAsCurrent(id: number):void{
+  saveCourseAsCurrent(id: number): void {
     console.log("course id", id)
     this.loginService.setCurrentCourse(id);
   }

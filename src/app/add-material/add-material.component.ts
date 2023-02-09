@@ -1,27 +1,32 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActiveUserInterface} from "../ActiveUserInterface";
 import {LoginService} from "../login.service";
 import {MaterialsService} from "../materials.service";
 import {HttpErrorResponse, HttpEvent, HttpEventType} from "@angular/common/http";
-import { saveAs } from 'file-saver';
+import {saveAs} from 'file-saver';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-material',
   templateUrl: './add-material.component.html',
   styleUrls: ['./add-material.component.css']
 })
-export class AddMaterialComponent implements OnInit{
+export class AddMaterialComponent implements OnInit {
   activeUser: ActiveUserInterface | undefined;
   filenames: string[] = [];
   fileStatus = {status: '', requestType: '', percent: 0};
   courseId: number;
 
   constructor(private loginService: LoginService,
-              private materialService: MaterialsService) {
+              private materialService: MaterialsService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
     this.activeUser = this.loginService.activeUser;
+    if (!this.activeUser) {
+      this.router.navigate(['/'])
+    }
     this.courseId = this.loginService.currentCourse;
   }
 
@@ -76,8 +81,8 @@ export class AddMaterialComponent implements OnInit{
           }
         } else {
           saveAs(new Blob([httpEvent.body!],
-            { type: `${httpEvent.headers.get('Content-Type')};charset=utf-8`}),
-             httpEvent.headers.get('File-Name'));
+              {type: `${httpEvent.headers.get('Content-Type')};charset=utf-8`}),
+            httpEvent.headers.get('File-Name'));
         }
         this.fileStatus.status = 'done';
         break;

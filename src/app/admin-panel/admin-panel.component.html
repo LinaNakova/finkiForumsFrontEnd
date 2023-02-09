@@ -1,107 +1,114 @@
-<h1>Административна табла</h1>
-<br>
+<div class="container">
+  <h1>Административна табла</h1>
+  <br>
 
-<div class="table-container">
-  <h3 class="table-title">Извештај за првите 3 валидни прашања кои имаат барем два одговори од професор, од тие три се бира прашањето кое има најмногу одговори во последните 4 месеци</h3>
-  <table>
-    <thead>
-    <tr>
-      <th>Наслов</th>
-      <th>Содржина</th>
-      <th>Датум</th>
-      <th>Број на одговори</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let row of query1">
-      <td>{{row?.pra_naslov}}</td>
-      <td>{{row?.pra_sodrzina}}</td>
-      <td>{{row?.pra_datum}}</td>
-      <td>{{row?.maximum}}</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-<hr>
-<div class="table-container">
-  <h3 class="table-title">Извештај за првите три прашања со најмногу одговори од студенти и професори посебно, потоа од тие прашања ја пресметуваме вкупната сума на реакции на одговорите(заедно од професори и студенти) и ги филтритаме само оние кои имаат просечен или надпросечен број на реакции</h3>
-  <table>
-    <thead>
-    <tr>
-      <th>Наслов</th>
-      <th>Содржина</th>
-      <th>Датум</th>
-      <th>Број на реакции</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let row of query2">
-      <td>{{row?.pra_naslov}}</td>
-      <td>{{row?.pra_sodrzina}}</td>
-      <td>{{row?.pra_datum}}</td>
-      <td>{{row?.br_reakcii_total}}</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-<hr>
-<div class="table-container">
-  <h3 class="table-title">Извештај за пронаоѓање на најдобрите 5 професори т.е. професорите кои имаат одговори со најдобри рејтингзи, имаат поставено најмногу материјали и предаваат најмногу курсеви.</h3>
-  <table>
-    <thead>
-    <tr>
+  <div class="table-container">
+    <h3 class="table-title">Извештај за првите 3 валидни прашања кои имаат барем два одговори од професор, од тие три се
+      бира прашањето кое има најмногу одговори во последните 4 месеци</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>Наслов</th>
+        <th>Содржина</th>
+        <th>Датум</th>
+        <th>Број на одговори</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of query1">
+        <td>{{row?.pra_naslov}}</td>
+        <td>{{row?.pra_sodrzina}}</td>
+        <td>{{row?.pra_datum}}</td>
+        <td>{{row?.maximum}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <div class="table-container">
+    <h3 class="table-title">Извештај за првите три прашања со најмногу одговори од студенти и професори посебно, потоа
+      од тие прашања ја пресметуваме вкупната сума на реакции на одговорите(заедно од професори и студенти) и ги
+      филтритаме само оние кои имаат просечен или надпросечен број на реакции</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>Наслов</th>
+        <th>Содржина</th>
+        <th>Датум</th>
+        <th>Број на реакции</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of query2">
+        <td>{{row?.pra_naslov}}</td>
+        <td>{{row?.pra_sodrzina}}</td>
+        <td>{{row?.pra_datum}}</td>
+        <td>{{row?.br_reakcii_total}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <div class="table-container">
+    <h3 class="table-title">Извештај за пронаоѓање на најдобрите 5 професори т.е. професорите кои имаат одговори со
+      најдобри рејтингзи, имаат поставено најмногу материјали и предаваат најмногу курсеви.</h3>
+    <table>
+      <thead>
+      <tr>
 
-      <th>Корисничко име</th>
-      <th>Вкупен број на активности</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let row of query3">
-      <td>{{row?.korisnicko_ime}}</td>
-      <td>{{row?.vk}}</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-<hr>
-<div class="table-container">
-  <h3 class="table-title">Извештај за секој предмет најпопуларните 3 курсеви во последните 3 месеци кои имаат барем по 2 исти категории за материјали и прашања</h3>
-  <table>
-    <thead>
-    <tr>
-      <th>Име на предмет</th>
-      <th>Име на курс</th>
-      <th>Број на исти категории</th>
-      <th>Број на исти категории</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let row of query4">
-      <td>{{row?.pr_ime}}</td>
-      <td>{{row?.ku_ime}}</td>
-      <td>{{row?.br_isti_kategorii}}</td>
-      <td>{{row?.br_prasanja}}</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-<hr>
-<div class="table-container">
-  <h3 class="table-title">Извештај за пронаоѓање на професорот кој најбрзо одговорил на поставено прашање</h3>
-  <table>
-    <thead>
-    <tr>
-      <th>Име на професор</th>
-      <th>Презиме на професор</th>
-      <th>Најбрзо време на одговор</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let row of query5">
-      <td>{{row?.p_ime}}</td>
-      <td>{{row?.p_prezime}}</td>
-      <td>{{formatInterval(row.najbrzo_vreme.value)}}</td>
-    </tr>
-    </tbody>
-  </table>
+        <th>Корисничко име</th>
+        <th>Вкупен број на активности</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of query3">
+        <td>{{row?.korisnicko_ime}}</td>
+        <td>{{row?.vk}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <div class="table-container">
+    <h3 class="table-title">Извештај за секој предмет најпопуларните 3 курсеви во последните 3 месеци кои имаат барем по
+      2 исти категории за материјали и прашања</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>Име на предмет</th>
+        <th>Име на курс</th>
+        <th>Број на исти категории</th>
+        <th>Број на исти категории</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of query4">
+        <td>{{row?.pr_ime}}</td>
+        <td>{{row?.ku_ime}}</td>
+        <td>{{row?.br_isti_kategorii}}</td>
+        <td>{{row?.br_prasanja}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <div class="table-container">
+    <h3 class="table-title">Извештај за пронаоѓање на професорот кој најбрзо одговорил на поставено прашање</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>Име на професор</th>
+        <th>Презиме на професор</th>
+        <th>Најбрзо време на одговор</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of query5">
+        <td>{{row?.p_ime}}</td>
+        <td>{{row?.p_prezime}}</td>
+        <td>{{formatInterval(row.najbrzo_vreme.value)}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
