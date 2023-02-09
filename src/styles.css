@@ -1,4 +1,8 @@
-body{
+body {
   font-family: Calibri;
+}
+
+h1, h2 {
+  color: rgba(27, 39, 107, 0.8);
 }
 

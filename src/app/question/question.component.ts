@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {QuestionInterface} from "../QuestionInterface";
 import {QuestionService} from "../question.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {CourseService} from "../course.service";
 import {CourseInterface} from "../courseInterface";
 import {LoginService} from "../login.service";
@@ -15,17 +15,21 @@ import {ActiveUserInterface} from "../ActiveUserInterface";
 export class QuestionComponent {
   questions: QuestionInterface[] = []
   course: CourseInterface | undefined;
-  activeUser: ActiveUserInterface| undefined;
+  activeUser: ActiveUserInterface | undefined;
 
   constructor(private service: QuestionService,
               private route: ActivatedRoute,
               private courseService: CourseService,
-              private loginService: LoginService) {
+              private loginService: LoginService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.activeUser = this.loginService.activeUser;
+    if (!this.activeUser) {
+      this.router.navigate(['/'])
+    }
     this.findCourseById(id);
     this.getAllQuestionsForCourse(id);
   }

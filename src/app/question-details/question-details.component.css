@@ -1,38 +1,64 @@
-.title{
-  color: lightskyblue;
+.title {
+  color: rgba(27, 39, 107, 0.8);
 }
-button{
-  background-color: lightskyblue;
+
+button {
   border: none;
   padding: 5px;
   height: 50px;
+  border-radius: 5px;
+  background-color: rgba(159, 168, 216, 0.8);
 }
-small{
+
+small {
   color: gray;
 }
-.container{
+
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: 200px;
   margin-right: 200px;
 }
-.header{
+
+.header {
   display: flex;
   justify-content: space-between;
 }
-.arrows{
+
+.arrows {
   display: flex;
   flex-direction: column;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-.answer-card{
+
+.answer-card {
   display: flex;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
+
 .answer-card p {
-  background-color: lightskyblue;
+  background-color: rgba(139, 208, 255, 0.8);
   padding: 10px;
   width: 100%;
+  border-radius: 10px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.header {
+  margin-top: 10px;
+}
+
+.content {
+  background-color: rgba(237, 238, 245, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+b {
+  color: rgba(51, 64, 136, 0.8);
 }

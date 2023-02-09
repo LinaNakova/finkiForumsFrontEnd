@@ -2,8 +2,8 @@
   <div class="container">
     <form class="example-form">
       <div class="add-answer">
-        <label>Содржина</label>
-        <textarea name="content" [(ngModel)]="content"></textarea>
+        <h3>Содржина</h3>
+        <textarea name="content" [(ngModel)]="content" placeholder="Внесете го вашиот одговор овде..."></textarea>
         <div class="btn-div">
           <button (click)="submit()"
                   [disabled]="content==null" type="button">Одговори на прашањето

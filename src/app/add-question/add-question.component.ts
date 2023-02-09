@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {QuestionInterface} from "../QuestionInterface";
 import {CourseInterface} from "../courseInterface";
 import {ActiveUserInterface} from "../ActiveUserInterface";
 import {LoginService} from "../login.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AddQuestionService} from "../add-question.service";
 
 
@@ -13,23 +13,28 @@ import {AddQuestionService} from "../add-question.service";
   styleUrls: ['./add-question.component.css']
 })
 export class AddQuestionComponent {
-  title:string | undefined;
-  content:string | undefined;
+  title: string | undefined;
+  content: string | undefined;
   courseId: number | undefined;
   question: QuestionInterface | undefined;
   course: CourseInterface | undefined;
   activeUser: ActiveUserInterface | undefined;
 
-  constructor(private addQuestionService:AddQuestionService,
+  constructor(private addQuestionService: AddQuestionService,
               private loginService: LoginService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit(): void {
     this.courseId = Number(this.route.snapshot.paramMap.get('id'));
     this.activeUser = this.loginService.activeUser;
+    if (!this.activeUser) {
+      this.router.navigate(['/'])
+    }
   }
-  submit(){
-    this.addQuestionService.add(this.title!!,this.content!!,this.activeUser!!.username,this.courseId!!)
+
+  submit() {
+    this.addQuestionService.add(this.title!!, this.content!!, this.activeUser!!.username, this.courseId!!)
   }
 }
