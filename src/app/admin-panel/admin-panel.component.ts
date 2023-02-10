@@ -9,6 +9,7 @@ import {Query4Interface} from "../Query4Interface";
 import {Query5Interface} from "../Query5Interface";
 import {ActiveUserInterface} from "../ActiveUserInterface";
 import {Router} from "@angular/router";
+import {LoginService} from "../login.service";
 
 @Component({
   selector: 'app-admin-panel',
@@ -23,9 +24,10 @@ export class AdminPanelComponent implements OnInit {
   query5: Query5Interface[] | undefined;
   activeUser: ActiveUserInterface | undefined;
 
-  constructor(private http: HttpClient, private service: AdminPanelService, private router: Router) { }
+  constructor(private http: HttpClient, private service: AdminPanelService, private loginService: LoginService, private router: Router) { }
 
   ngOnInit():void {
+    this.activeUser = this.loginService.activeUser!!;
     if (!this.activeUser) {
       this.router.navigate(['/'])
     }
