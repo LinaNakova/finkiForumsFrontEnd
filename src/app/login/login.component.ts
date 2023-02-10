@@ -34,10 +34,12 @@ export class LoginComponent {
   }
   showLogin(){
     this.login = this.login == null ? true : !this.login;
+    this.register = false;
   }
 
   showRegister(){
     this.register = this.register == null ? true : !this.register;
+    this.login = false;
   }
 
 }

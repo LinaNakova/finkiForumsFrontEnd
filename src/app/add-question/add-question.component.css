@@ -55,3 +55,13 @@ textarea {
 .btn-div {
   float: right;
 }
+ng-multiselect-dropdown{
+  width: 97%;
+}
+:host ::ng-deep .multiselect-dropdown .dropdown-btn {
+    width: 97%;
+    background-color: rgba(237, 238, 245, 0.8);
+    font-size: 16px;
+    border-radius: 5px;
+}
+

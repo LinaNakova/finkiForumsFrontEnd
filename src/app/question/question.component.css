@@ -25,6 +25,7 @@ button {
   height: 50px;
   margin: 5px;
   border-radius: 7px;
+  cursor: pointer;
 }
 
 .buttons {

@@ -7,6 +7,8 @@ import {Query2Interface} from "../Query2Interface";
 import {Query3Interface} from "../Query3Interface";
 import {Query4Interface} from "../Query4Interface";
 import {Query5Interface} from "../Query5Interface";
+import {ActiveUserInterface} from "../ActiveUserInterface";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-admin-panel',
@@ -19,10 +21,14 @@ export class AdminPanelComponent implements OnInit {
   query3: Query3Interface[] | undefined;
   query4: Query4Interface[] | undefined;
   query5: Query5Interface[] | undefined;
+  activeUser: ActiveUserInterface | undefined;
 
-  constructor(private http: HttpClient, private service: AdminPanelService) { }
+  constructor(private http: HttpClient, private service: AdminPanelService, private router: Router) { }
 
   ngOnInit():void {
+    if (!this.activeUser) {
+      this.router.navigate(['/'])
+    }
     forkJoin([
       this.service.getFirstQuery(),
       this.service.getSecondQuery(),
