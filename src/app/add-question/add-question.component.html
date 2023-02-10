@@ -8,7 +8,13 @@
         <label>Содржина</label>
         <textarea name="content" [(ngModel)]="content"></textarea>
         <label>Категории</label>
-        <!--TODO:Add question category-->
+        <ng-multiselect-dropdown
+          [placeholder]=""
+          [settings]="dropdownSettings"
+          [data]="categories"
+          [(ngModel)]="selectedItems"
+          name="categories">
+        </ng-multiselect-dropdown>
         <div class="btn-div">
           <button (click)="submit()"
                   [disabled]="title==null && content==null" type="button">Прашај

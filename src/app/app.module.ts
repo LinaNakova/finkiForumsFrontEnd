@@ -18,7 +18,7 @@ import { CategoryComponent } from './category/category.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { MaterialsComponent } from './materials/materials.component';
 import { AddMaterialComponent } from './add-material/add-material.component';
-
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,8 @@ import { AddMaterialComponent } from './add-material/add-material.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
