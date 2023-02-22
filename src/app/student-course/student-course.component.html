@@ -7,10 +7,10 @@
     </a>
   </div>
   <div class="container" *ngIf="this.activeUser?.userType=='PROFESSOR'">
-    <div class="card">
-      <a *ngFor="let s of professorCourses"
-         (click)="saveCourseAsCurrent(s?.course?.id)"
-         routerLink="/details/{{s?.course?.id}}">
+    <div class="card" *ngFor="let s of professorCourses">
+      <a
+        (click)="saveCourseAsCurrent(s?.course?.id)"
+        routerLink="/details/{{s?.course?.id}}">
         Курс:
         <br>
         {{s?.course?.name}}
