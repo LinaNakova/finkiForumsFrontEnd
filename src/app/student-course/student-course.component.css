@@ -1,6 +1,6 @@
 .card {
   display: flex;
-  background-color: rgba(139, 208, 255, 0.8);
+  background-color: #3A98B9;
   width: 200px;
   height: 200px;
   margin: 10px;
@@ -8,10 +8,14 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  color: #FFF1DC;
+  font-weight: normal;
+  font-size: large;
 }
 
 .container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .parent-container {
@@ -24,9 +28,9 @@
 
 a {
   text-decoration: none;
-  color: black;
+  color: #FFF1DC;
 }
 
 .card:hover {
-  box-shadow: 0 0 2px 2px rgba(139, 208, 255, 0.8);
+  box-shadow: 0 0 2px 2px #E1DDDD;
 }

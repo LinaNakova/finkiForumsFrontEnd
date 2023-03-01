@@ -12,12 +12,15 @@
 }
 
 button {
-  background-color: rgba(139, 208, 255, 0.8);
+  background-color: #3A98B9;
   border: none;
   padding: 5px;
   height: 50px;
   margin: 5px;
   border-radius: 5px;
+  color: #FFF1DC;
+  font-weight: normal;
+  font-size: large;
 }
 
 li {
@@ -31,5 +34,12 @@ p {
 
 svg {
   color: rgba(27, 39, 107, 0.8);
+}
+
+ol{
+  color: #3A98B9;
+  font-size: large;
+  background-color: #ffffff;
+  border-radius: 15px;
 }
 

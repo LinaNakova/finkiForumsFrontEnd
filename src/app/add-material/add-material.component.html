@@ -1,7 +1,7 @@
 <div class="container">
   <div >
     <div>
-      <h4>Прикачи датотека</h4>
+      <h3>Прикачи датотека</h3>
     </div><br>
     <div>
       <div *ngIf="fileStatus.status==='progress'">
@@ -29,7 +29,7 @@
         <div *ngFor="let filename of filenames">
           <a (click)="onDownloadFile(filename)">
             {{ filename }}
-            <a>Превземи</a>
+            <a><span>Превземи</span></a>
           </a><br>
         </div>
       </div>

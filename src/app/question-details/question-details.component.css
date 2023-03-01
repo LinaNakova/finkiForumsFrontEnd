@@ -1,5 +1,5 @@
 .title {
-  color: rgba(27, 39, 107, 0.8);
+  color: #3A98B9;
 }
 
 button {
@@ -7,8 +7,11 @@ button {
   padding: 5px;
   height: 50px;
   border-radius: 5px;
-  background-color: rgba(159, 168, 216, 0.8);
+  background-color: #3A98B9;
   cursor: pointer;
+  font-weight: normal;
+  font-size: large;
+  color: #FFF1DC;
 }
 
 small {
@@ -33,6 +36,8 @@ small {
   flex-direction: column;
   margin-bottom: 0;
   padding-bottom: 0;
+  margin-right: 5px;
+  color: #3A98B9;
 }
 
 .answer-card {
@@ -42,12 +47,15 @@ small {
 }
 
 .answer-card p {
-  background-color: rgba(139, 208, 255, 0.8);
+  background-color: #3A98B9;
   padding: 10px;
   width: 100%;
   border-radius: 10px;
   padding-top: 25px;
   padding-bottom: 25px;
+  color: #FFF1DC;
+  font-weight: normal;
+  font-size: large;
 }
 
 .header {
@@ -55,7 +63,7 @@ small {
 }
 
 .content {
-  background-color: rgba(237, 238, 245, 0.8);
+  background-color: #ffffff;
   padding: 10px;
   border-radius: 10px;
 }
