@@ -34,6 +34,9 @@ th {
   border-radius: 10px;
 }
 
-table{
+table th{
   color: #FFF1DC;
+}
+table td{
+  color: rgba(27, 39, 107, 0.8);
 }
