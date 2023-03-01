@@ -1,10 +1,13 @@
 .card {
   display: inline-block;
-  background-color: rgba(139, 208, 255, 0.8);
+  background-color: #3A98B9;
   width: 100px;
   height: 100px;
   margin: 10px;
   padding: 5px;
+  color: #FFF1DC;;
+  font-weight: normal;
+  font-size: large;
 }
 
 .container {
@@ -20,7 +23,7 @@
 }
 
 button {
-  background-color: rgba(139, 208, 255, 0.8);
+  background-color: #3A98B9;
   border: none;
   padding: 5px;
   height: 50px;
@@ -28,6 +31,9 @@ button {
   margin: 5px;
   float: right;
   cursor: pointer;
+  color: #FFF1DC;
+  font-weight: normal;
+  font-size: large;
 }
 
 .list {

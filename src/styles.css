@@ -1,8 +1,8 @@
 body {
-  font-family: Calibri;
+  font-family: system-ui;
+  background-color: #EEEEEE;
 }
 
 h1, h2 {
   color: rgba(27, 39, 107, 0.8);
 }
-
